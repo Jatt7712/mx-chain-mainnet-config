@@ -377,8 +377,8 @@
     CheckpointHashesHolderMaxSize = 52428800 #50MB
 
 [HeadersPoolConfig]
-    MaxHeadersPerShard = 1000
-    NumElementsToRemoveOnEviction = 200
+    MaxHeadersPerShard = 10000
+    NumElementsToRemoveOnEviction = 2000
 
 [BadBlocksCache]
     Name = "BadBlocksCache"
@@ -388,9 +388,9 @@
 
 [TxBlockBodyDataPool]
     Name = "TxBlockBodyDataPool"
-    Capacity = 100000
+    Capacity = 500000
     Type = "SizeLRU"
-    SizeInBytes = 314572800 #300MB
+    SizeInBytes = 1014572800 #1000MB
 
 [PeerBlockBodyDataPool]
     Name = "PeerBlockBodyDataPool"
@@ -400,10 +400,10 @@
 
 [TxDataPool]
     Name = "TxDataPool"
-    Capacity = 600000
-    SizePerSender = 20000
-    SizeInBytes = 419430400 #400MB
-    SizeInBytesPerSender = 12288000
+    Capacity = 2000000
+    SizePerSender = 200000
+    SizeInBytes = 1219430400 #1200MB
+    SizeInBytesPerSender = 122880000 #120MB
     Type = "TxCache"
     Shards = 16
 
@@ -415,26 +415,26 @@
 
 [SmartContractDataPool]
     Name = "SmartContractDataPool"
-    Capacity = 900000
+    Capacity = 2000000
     Type = "SizeLRU"
-    SizeInBytes = 209715200 #200MB
+    SizeInBytes = 509715200 #500MB
 
 [WhiteListPool]
     Name = "WhiteListPool"
-    Capacity = 100000
+    Capacity = 1000000
     Type = "FIFOSharded"
     Shards = 10
 
 [WhiteListerVerifiedTxs]
     Name = "WhiteListerVerifiedTxs"
-    Capacity = 50000
+    Capacity = 500000
     Type = "FIFOSharded"
     Shards = 50
 
 [UnsignedTransactionDataPool]
     Name = "UnsignedTransactionDataPool"
-    Capacity = 75000        # per each pair (sourceShard, destinationShard)
-    SizeInBytes = 31457280  # 30MB per each pair (sourceShard, destinationShard)
+    Capacity = 750000        # per each pair (sourceShard, destinationShard)
+    SizeInBytes = 314572800  # 30MB per each pair (sourceShard, destinationShard)
     Shards = 4
 
 [RewardTransactionDataPool]
